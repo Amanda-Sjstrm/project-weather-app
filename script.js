@@ -60,7 +60,7 @@ fetch(
       minute: "2-digit",
       hour12: false,
     });
-    sunUp.innerHTML = `<h4>The sun rises at ${sunriseHrMin}</h4>`;
+    sunUp.innerHTML = `<h4>Sunrise at ${sunriseHrMin}</h4>`;
     console.log(json.sys.sunrise);
 
     const sunset = json.sys.sunset;
@@ -70,7 +70,7 @@ fetch(
       minute: "2-digit",
       hour12: false,
     });
-    sunDown.innerHTML = `<h4>The sun sets at ${sunsetHrMin}</h4>`;
+    sunDown.innerHTML = `<h4>Sunset at ${sunsetHrMin}</h4>`;
     console.log(json.sys.sunset);
 
     const humidity=json.main.humidity;
