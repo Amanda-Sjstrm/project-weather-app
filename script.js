@@ -31,11 +31,9 @@ fetch(
     // Update weather in Malmo from API
 
     weather.innerHTML = `<h1>Today's weather in ${json.name}</h1>`;
-    //jag gör en const här för dagens väder, så att det finns något att referera till längre
-    //ner med bakgrundsbilder beroende på dagens väder
 
-    // Describe weather and change weatherIcon based on weather description
-    descriptionToday.innerHTML = `<h2>The weather is ${json.weather[0].description}</h2>`;
+    // Describe weather
+    descriptionToday.innerHTML = `<h2>${json.weather[0].description}</h2>`;
 
     // Change weatherIcon based on weather description
     if (json.weather[0].description) {
@@ -44,12 +42,12 @@ fetch(
       descriptionToday.innerHTML += `<img src="${iconFileName}" alt="Weather icon">`;
     }
 
-    // descriptionToday.innerHTML = `<h2>The weather is ${json.weather[0].description} ${json.weather.icon}</h2>`;
-    // stylingtryout;
+    const temperature = Math.round(json.main.temp * 10) / 10
+    tempToday.innerHTML = `<h3>${temperature}°C</h3>`;
 
-    tempToday.innerHTML = `<h3>The temperature is ${
-      Math.round(json.main.temp * 10) / 10
-    }°C</h3>`;
+    //tempToday.innerHTML = `<h3>${
+      //Math.round(json.main.temp * 10) / 10
+    //}°C</h3>`;
 
     feelsLike.innerHTML = `<h3>Feels like ${
       Math.round(json.main.feels_like * 10) / 10
@@ -75,19 +73,10 @@ fetch(
     sunDown.innerHTML = `<h4>The sun sets at ${sunsetHrMin}</h4>`;
     console.log(json.sys.sunset);
 
+    const humidity=json.main.humidity;
     const wind = json.wind.gust;
-    windGust.innerHTML = `<h5>Wind gusts blow up to ${wind} m/s</h5>`;
+    windGust.innerHTML = `<h5>Wind gusts blow up to ${wind} m/s and humidity is at ${humidity}%</h5>`;
   });
-
-//ändra bakgrund beroende på väder, som JL?
-
-//weekly forecast
-
-//avsluta med en .catch((err) => {
-//console.log('error caught', err)
-//})
-
-//Eventlisteners?
 
 // Five day weather forecast
 
@@ -132,3 +121,4 @@ function generateHTMLForForecast(day) {
   fiveDayForecastHTML += `</div>`;
   return fiveDayForecastHTML;
 }
+

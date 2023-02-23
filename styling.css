@@ -14,7 +14,7 @@ body {
 }
 
 .img {
-  background-color: aquamarine;
+  background-color: #b4ceb3;
   background-image: url(./Designs/Design-1/assets/turning-torso.jpg);
   background-size: 100% 100%;
   height: 500px;
@@ -35,27 +35,36 @@ h2 {
   line-height: 25px;
   text-align: center;
   margin: 15px 20px;
+  text-transform: capitalize;
+}
+
+.tempToday {
+  font-size: 50px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 h3 {
+  margin-top: 5px;
   text-align: left;
-  font-size: 20px;
-  font-weight: bold;
+  font-weight: lighter;
   margin-left: 15px;
+  color: #E7CFBC;
 }
 
 h4 {
   text-align: right;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: lighter;
   margin-right: 15px;
+  color: #E7CFBC;
 }
 
 h5 {
   text-align: center;
   align-items: flex-end;
-  font-size: 25px;
-  color: #b0c4de;
+  font-size: 20px;
+  color: #E7CFBC;
   font-weight: lighter;
 }
 
@@ -90,3 +99,4 @@ h5 {
   display: flex;
   justify-content: center;
 }
+
